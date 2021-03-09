@@ -29,7 +29,8 @@ describe('[Moдуль 1 - Компонент рекомендуемого тов
     expect((component as any).product).toBeDefined();
   });
 
-  it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct', () => {
+  it('при нажатии на блок с селектором .go-to-product
+  должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct', () => {
     spyOn(component as any, 'redirectTo').and.callThrough();
     spyOn((component as any)?.goToProduct, 'emit').and.callThrough();
     const incrementButton = fixture.debugElement.query(
