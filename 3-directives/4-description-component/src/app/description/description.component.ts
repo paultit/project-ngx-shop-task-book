@@ -5,18 +5,14 @@ import { IProduct } from '../../../../../shared/mocks/3-directives/product-infor
   templateUrl: './description.component.html',
 })
 export class DescriptionComponent {
-  @Input() public product: IProduct = null;
   public isShowDescription = true;
-  @Output()
-  public addFeedbackEvent: EventEmitter<string> = new EventEmitter<string>();
+  @Input() product = null;
+  @Output() addFeedbackEvent: EventEmitter<string> = new EventEmitter<string>();
 
-  public close!: () => void;
-  public save!: (value: object) => void;
-  public toggleTab(): void {
+  toggleTab() {
     this.isShowDescription = !this.isShowDescription;
   }
-
-  public addFeedback(value: string): void {
+  addFeedback(value) {
     this.addFeedbackEvent.emit(value);
   }
 }
